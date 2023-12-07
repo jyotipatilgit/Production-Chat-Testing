@@ -27,7 +27,6 @@
     background:#7cc55a!important;
     }
 </style>
-
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
@@ -53,17 +52,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://ecic--nexuscr.sandbox.my.salesforce.com',
-			'https://ecic--nexuscr.sandbox.my.site.com/nexuslightning',
+			'https://ecic.my.salesforce.com',
+			'https://ecic.my.site.com/nexuslightning',
 			gslbBaseURL,
-			'00D7Z00000058iT',
+			'00D20000000Ca1C',
 			'NO_Chat',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-fra.salesforceliveagent.com/content',
-				deploymentId: '5727Z000000L1hI',
-				buttonId: '5737Z000000Kz3u',
-				baseLiveAgentURL: 'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I7Z000000KzHUUA0_18bd31f6ffd',
+				baseLiveAgentContentURL: 'https://c.la3-c1-fra.salesforceliveagent.com/content',
+				deploymentId: '5726M000000XZNv',
+				buttonId: '5736M000000XZPX',
+				baseLiveAgentURL: 'https://d.la3-c1-fra.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6M000000blNLUAY_18c397ebe14',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -71,7 +70,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://ecic--nexuscr.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://ecic.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -80,5 +79,4 @@
 		initESW('https://service.force.com');
 	}
 </script>
-
 </html>
