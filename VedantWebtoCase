@@ -14,9 +14,7 @@
             const file = fileInput.files[0];
             const fileData = new FormData();
             fileData.append('file', file, file.name);
-            fileData.append('Name', file.name);
-            fileData.append('ContentType', file.type);
-            fileData.append('Body', file);
+           
  
             try {
                 // Create case first
@@ -50,11 +48,11 @@
                     }
                 );
  
-                console.log('Attachment created successfully:', attachmentResponse.data);
+                console.log('Attachment created successfully:',attachmentResponse);
                 alert('Case and attachment created successfully!');
             } catch (error) {
-                console.error('Error creating case or attachment:', error.response.data);
-                alert('Error creating case or attachment: ' + error.response.data[0].message);
+                console.error('Error creating case or attachment:');
+                alert('Error creating case or attachment: ' + error);
             }
         }
     </script>
