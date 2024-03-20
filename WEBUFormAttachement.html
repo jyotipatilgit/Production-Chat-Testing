@@ -1,0 +1,80 @@
+<html>
+<head>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+        <script>
+            window.onload = function() {
+                var fileUpload = document.getElementsByName("fileUpload")[0];
+                fileUpload.addEventListener("change", function(e) {
+                    e.preventDefault();
+                    console.log("hello");
+                    var file =  document.getElementById("fileUpload").files[0];
+                    var reader = new FileReader();
+                    reader.readAsText(file,"UTF-8");
+                    reader.onload = function(e) {
+                        document.getElementsByName("fileContent")
+                        console.log('file'+file);
+                    }
+                });
+
+                var submit = document.getElementsByName("submit")[0];
+                submit.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    console.log("hello");
+                   var xhttp = new XMLHttpRequest();
+                   /* xhttp.onreadystatechange = function() {
+                        if(this.readyState == 4) {
+                            console.log(this.responseText);
+                        }
+                    }*/
+                    xhttp.open("POST", "/services/apexrest/Cases", true);
+                    xhttp.setRequestHeader("Content-type","application/json");
+                    var orgid = document.getElementsByName("orgid")[0];
+                    var retURL = document.getElementsByName("retURL")[0];
+                    var Status = document.getElementsByName("status")[0];
+					var Subject = document.getElementsByName("subject")[0];
+                  // jyo var Website_Name__c = document.getElementsByName("Website_Name__c")[0];
+                    //var Origin = document.getElementsByName("Origin")[0];
+                   // jyo var CurrencyIsoCode = document.getElementsByName("CurrencyIsoCode")[0];
+                    var name = document.getElementsByName("name")[0];
+                    var email = document.getElementsByName("email")[0];
+					var recordType = document.getElementsByName("recordType")[0];
+					var countrycode = document.getElementsByName("00N20000003ZhOE")[0];
+					console.log("orgid"+orgid);
+					console.log("email"+email);
+					console.log("status"+Status);
+					console.log("Subject"+Subject);
+                   //xhttp.send("name="+name);
+                    xhttp.send("orgid="+orgid+"&retURL="+retURL+"&Status="+Status+"&name="+name+"&email="+email+"&recordType="+recordType+"&countrycode="+countrycode+"&Subject="+Subject);                    
+                });
+            }
+        </script>
+    </head>
+    <body>
+<form action="https://ecic--qsedev.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Y000000GCrY" method="POST">
+
+<input type=hidden name="orgid" value="00D7Y000000GCrY">
+<input type=hidden name="retURL" value="http://google.com">
+<input type=hidden name="recordType" value="01220000000Qkdr">
+<input type=hidden name="status" value="New">
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+<label for="description">Description</label><textarea name="description"></textarea><br>
+Country Code:<select  id="00N20000003ZhOE" name="00N20000003ZhOE" title="Country Code">
+<option value="">--None--</option>
+<option value="BE">BE</option>
+<option value="GB">GB</option>
+<option value="NL">NL</option>
+<option value="SE">SE</option></select><br>
+
+            <label >Uplaod File</label><input type = "file"  id="fileUpload"  name="fileUpload"/><br/>
+			<input type="hidden"  id="external" name="external" value="1" /><br>
+            <input type="submit" name="submit"/>
+        </form>
+    </body>
+</html>
