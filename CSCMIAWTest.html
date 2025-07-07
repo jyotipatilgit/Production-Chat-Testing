@@ -33,33 +33,38 @@
 </head>
 <body>	
 <script type='text/javascript'>
-function initEmbeddedMessaging(){
-try{
-		 embeddedservice_bootstrap.settings.language = 'en-US'; // For example, enter 'en' or ''
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'ja'; // For example, enter 'en' or 'en-US'
              //Jyoti-Start
-             window.addEventListener("onEmbeddedMessagingReady",()=>{
+             
+             window.addEventListener("onEmbeddedMessagingReady", () => {
                 console.log("Received the onEmbeddedMessagingReady event…");
+            
                 // Send data to Salesforce
                 embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Country_Code" : "JP",
                     "Origin" : "Chat",
                     "Offline_Support" : "No"
                     });
-					// Remove any items from the previous list that you don't want to send
+            
+                // Remove any items from the previous list that you don't want to send
                 //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
             });
+            
             //Jyoti-End
-			embeddedservice_bootstrap.init(
-				'00DVZ000002odoD',
-				'JP_CSC_MIAW_Chat',
-				'https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187',
-				{
-					scrt2URL: 'https://ecic2--uat.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		}catch(err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
+            
+            embeddedservice_bootstrap.init(
+                '00DVZ000002odoD',
+                'JP_CSC_MIAW_Chat',
+                'https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187',
+                {
+                    scrt2URL: 'https://ecic2--uat.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
 </script>
 <script type='text/javascript' src='https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
