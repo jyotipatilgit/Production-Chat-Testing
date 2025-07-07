@@ -1,8 +1,5 @@
 <html>
 <head>
-<div id='imageblock'>
-<button class='button' onclick="document.getElementById('imageblock').style.display='none';">X</button>
-</div>
 <style type="text/css">
 #imageblock{
 	opacity: 1;
@@ -31,27 +28,28 @@
   }
 </style>
 </head>
+
+<div id='imageblock'>
+<button class='button' onclick="document.getElementById('imageblock').style.display='none';">X</button>
+</div>
+
 <body>	
 <script type='text/javascript'>
 function initEmbeddedMessaging(){
 try{
-		 embeddedservice_bootstrap.settings.language = 'ja'; // For example, enter 'en' or 'en-US'
+		 embeddedservice_bootstrap.settings.language = 'en-US'; // For example, enter 'en' or ''
              //Jyoti-Start
-             window.addEventListener("onEmbeddedMessagingReady", () => {
+             window.addEventListener("onEmbeddedMessagingReady",()=>{
                 console.log("Received the onEmbeddedMessagingReady event…");
-            
                 // Send data to Salesforce
                 embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Country_Code" : "JP",
                     "Origin" : "Chat",
                     "Offline_Support" : "No"
                     });
-            
-                // Remove any items from the previous list that you don't want to send
+					// Remove any items from the previous list that you don't want to send
                 //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
             });
-            
             //Jyoti-End
-
 			embeddedservice_bootstrap.init(
 				'00DVZ000002odoD',
 				'JP_CSC_MIAW_Chat',
