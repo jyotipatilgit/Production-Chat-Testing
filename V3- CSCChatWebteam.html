@@ -42,6 +42,7 @@
                          "Offline_Support" : "No"
                          })
                  });
+                 alert('test1');
                  embeddedservice_bootstrap.init(
                      '00DVZ000002odoD',
                      'JP_CSC_MIAW_Chat',
@@ -52,10 +53,11 @@
                  );
              } catch (err) {
                  console.error('Error loading Embedded Messaging: ', err);
+                 alert('test2');
              }
          };
       </script>
-      alert('test');
+      alert('test3');
       <script type='text/javascript' src='https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
    </body>
 </html>
