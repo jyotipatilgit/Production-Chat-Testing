@@ -1,87 +1,83 @@
 <html>
-<div id='imageblock'>
-<button class='button' onclick="document.getElementById('imageblock').style.display='none';">X</button>
-</div>
-
-<!--
-// ===================================================================
-// chat tool css
-// ===================================================================
--->
-<!-- #ea001e -->
-<style type="text/css">
- <!---Jyoti Start-To Add Polar Bear -->    
-    #imageblock {
-    opacity: 1;
-    position: fixed;
-    bottom: -22px;
-    right: 0px;
-    height: 150px;
-    width: 187px;
-    margin-right: 21px;
-    z-index: 1;
-    background-image: url("https://ecic2--uat.sandbox.my.site.com/resource/1751575252000/PolarBear");
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-
-  #button {
-    background-color: #cccccc;
-    border: none;
-    color: #5a5a5a;
-    padding: 3px 6px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin-left: 168px;
-    cursor: pointer;
-  }
-    <!---Jyoti End-To Add Polar Bear -->
-        </style>
-
-<!--
-// ===================================================================
-// chat tool js
-// ===================================================================
--->
-<body>
-<script type='text/javascript'>
-    function initEmbeddedMessaging() {
-        try {
-            embeddedservice_bootstrap.settings.language = 'ja'; // For example, enter 'en' or 'en-US'
-             //Jyoti-Start
-             
-             window.addEventListener("onEmbeddedMessagingReady", () => {
-                console.log("Received the onEmbeddedMessagingReady event…");
-            
-                // Send data to Salesforce
-                embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Country_Code" : "JP",
-                    "Origin" : "Chat",
-                    "Offline_Support" : "No"
-                    });
-            
-                // Remove any items from the previous list that you don't want to send
-                //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
-            });
-            
-            //Jyoti-End
-            
-            embeddedservice_bootstrap.init(
-                '00DVZ000002odoD',
-                'JP_CSC_MIAW_Chat',
-                'https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187',
-                {
-                    scrt2URL: 'https://ecic2--uat.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-</script>
-<script type='text/javascript' src='https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-<!--↑chat-code-->
-</body>
+   <div id='imageblock'>
+      <button class='button' onclick="document.getElementById('imageblock').style.display='none';">X</button>
+   </div>
+   <!--
+      // ===================================================================
+      // chat tool css
+      // ===================================================================
+      -->
+   <!-- #ea001e -->
+   <style type="text/css">
+      <!---Jyoti Start-To Add Polar Bear -->    
+      #imageblock {
+      opacity: 1;
+      position: fixed;
+      bottom: -22px;
+      right: 0px;
+      height: 150px;
+      width: 187px;
+      margin-right: 21px;
+      z-index: 1;
+      background-image: url("https://ecic2--uat.sandbox.my.site.com/resource/1751575252000/PolarBear");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      }
+      #button {
+      background-color: #cccccc;
+      border: none;
+      color: #5a5a5a;
+      padding: 3px 6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin-left: 168px;
+      cursor: pointer;
+      }
+      <!---Jyoti End-To Add Polar Bear -->
+   </style>
+   <!--
+      // ===================================================================
+      // chat tool js
+      // ===================================================================
+      -->
+   <body>
+      <script type='text/javascript'>
+         function initEmbeddedMessaging() {
+             try {
+                 embeddedservice_bootstrap.settings.language = 'ja'; // For example, enter 'en' or 'en-US'
+                  //Jyoti-Start
+                  
+                  window.addEventListener("onEmbeddedMessagingReady", () => {
+                     console.log("Received the onEmbeddedMessagingReady event…");
+                 
+                     // Send data to Salesforce
+                     embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Country_Code" : "JP",
+                         "Origin" : "Chat",
+                         "Offline_Support" : "No"
+                         });
+                 
+                     // Remove any items from the previous list that you don't want to send
+                     //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+                 });
+                 
+                 //Jyoti-End
+                 
+                 embeddedservice_bootstrap.init(
+                     '00DVZ000002odoD',
+                     'JP_CSC_MIAW_Chat',
+                     'https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187',
+                     {
+                         scrt2URL: 'https://ecic2--uat.sandbox.my.salesforce-scrt.com'
+                     }
+                 );
+             } catch (err) {
+                 console.error('Error loading Embedded Messaging: ', err);
+             }
+         };
+      </script>
+      <script type='text/javascript' src='https://ecic2--uat.sandbox.my.site.com/ESWJPCSCMIAWChat1751525888187/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+      <!--↑chat-code-->
+   </body>
 </html>
