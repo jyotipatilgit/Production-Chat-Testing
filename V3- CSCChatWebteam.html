@@ -9,7 +9,6 @@
       -->
    <!-- #ea001e -->
    <style type="text/css">
-      <!---Jyoti Start-To Add Polar Bear -->    
       #imageblock {
       opacity: 1;
       position: fixed;
@@ -35,20 +34,12 @@
       margin-left: 168px;
       cursor: pointer;
       }
-      <!---Jyoti End-To Add Polar Bear -->
    </style>
-   <!--
-      // ===================================================================
-      // chat tool js
-      // ===================================================================
-      -->
    <body>
       <script type='text/javascript'>
          function initEmbeddedMessaging() {
              try {
                  embeddedservice_bootstrap.settings.language = 'ja'; // For example, enter 'en' or 'en-US'
-                  //Jyoti-Start
-                  
                   window.addEventListener("onEmbeddedMessagingReady", () => {
                      console.log("Received the onEmbeddedMessagingReady event…");
                  
@@ -56,14 +47,8 @@
                      embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Country_Code" : "JP",
                          "Origin" : "Chat",
                          "Offline_Support" : "No"
-                         });
-                 
-                     // Remove any items from the previous list that you don't want to send
-                     //embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+                         })
                  });
-                 
-                 //Jyoti-End
-                 
                  embeddedservice_bootstrap.init(
                      '00DVZ000002odoD',
                      'JP_CSC_MIAW_Chat',
